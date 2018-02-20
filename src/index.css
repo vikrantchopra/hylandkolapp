@@ -1,0 +1,14 @@
+@import '~primereact/resources/primereact.min.css';
+@import '~primereact/resources/themes/voclain/theme.css';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: small;
+  background-color: rgb(217, 252, 252);
+}
+
+.ui-chkbox-label {
+  background-color: 'white';
+}
