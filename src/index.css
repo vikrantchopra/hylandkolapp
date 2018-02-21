@@ -6,9 +6,13 @@ body {
   padding: 0;
   font-family: sans-serif;
   font-size: small;
-  background-color: rgb(217, 252, 252);
+  /*background-color: rgb(217, 252, 252);*/
 }
 
 .ui-chkbox-label {
   background-color: 'white';
+}
+
+.ui-organizationchart {
+  max-width: 80%;
 }

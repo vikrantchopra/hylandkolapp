@@ -108,7 +108,12 @@ export default class AddEmployee extends Component {
   render() {
     let employees = this.state.employees;
     var employeeCount = this.state.employees ? this.state.employees.length : 0;
-    var header = <div className="ui-helper-clearfix" style={{ 'lineHeight': '1.87em' }}>Employee List <Button icon="fa-refresh" style={{ 'float': 'right' }} /></div>;
+    //var header = <div className="ui-helper-clearfix" style={{ 'lineHeight': '1.87em' }}>Employee List <Button icon="fa-refresh" style={{ 'float': 'right' }} /></div>;
+    var header = <div style={{'textAlign':'left'}}>
+                        <i className="fa fa-search" style={{margin:'4px 4px 0 0'}}></i>
+                        <InputText type="search" onInput={(e) => this.setState({globalFilter: e.target.value})} placeholder="Global Search" size="50"/>
+						<span  style={{paddingLeft: '3em', fontSize: 'large' }}>Employee List </span><Button icon="fa-refresh" style={{ 'float': 'right' }} />
+                    </div>;
     var footer = "There are " + employeeCount + ' employees';
     return (
       <div class="ui-g">

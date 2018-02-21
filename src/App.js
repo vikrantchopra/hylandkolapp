@@ -4,6 +4,7 @@ import './App.css';
 
 import UserInfo from './UserInfo';
 import AddEmployee from './AddEmployee';
+import SmcDetails from './SmcDetails';
 
 import { TabView, TabPanel } from 'primereact/components/tabview/TabView';
 
@@ -25,8 +26,8 @@ class App extends Component {
           <TabPanel header="Add/Show Employees" leftIcon="fa-calendar">
             <AddEmployee />
           </TabPanel>
-          <TabPanel header="Second Tab">
-            This is Tab 2
+          <TabPanel header="Our Community">
+            <SmcDetails />
           </TabPanel>
         </TabView>
 
