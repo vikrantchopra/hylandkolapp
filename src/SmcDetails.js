@@ -59,15 +59,15 @@ export default class SmcDetails extends Component {
                     expanded: false,
                     data: { name: 'Arindam Chakraborty', 'avatar': 'male1.png' },
                     children: [{
-                        label: 'IHE',
+                        label: 'Warriors',
                         className: 'department-coo'
                     },
                     {
-                        label: 'Team 2',
+                        label: 'Knight Riders',
                         className: 'department-cfo'
                     },
                     {
-                        label: 'Team 3',
+                        label: 'Royals',
                         className: 'department-cfo'
                     }]
                 },
@@ -78,15 +78,15 @@ export default class SmcDetails extends Component {
                     expanded: false,
                     data: { name: 'Soumya Sikder', 'avatar': 'male1.png' },
                     children: [{
-                        label: 'Super Kings',
+                        label: 'Nolij',
                         className: 'department-coo'
                     },
                     {
-                        label: 'Team 2',
+                        label: 'Super Kings',
                         className: 'department-cfo'
                     },
                     {
-                        label: 'Team 3',
+                        label: 'Prod. Engg',
                         className: 'department-cfo'
                     }]
                 },
@@ -97,15 +97,15 @@ export default class SmcDetails extends Component {
                     expanded: false,
                     data: { name: 'Suvonkar Dam', 'avatar': 'male1.png' },
                     children: [{
-                        label: 'Super Kings',
+                        label: 'IHE',
                         className: 'department-coo'
                     },
                     {
-                        label: 'Team 2',
+                        label: 'Dare Devils',
                         className: 'department-cfo'
                     },
                     {
-                        label: 'Team 3',
+                        label: 'DAX',
                         className: 'department-cfo'
                     }]
                 },
@@ -116,15 +116,15 @@ export default class SmcDetails extends Component {
                     expanded: false,
                     data: { name: 'Subrata RoyChowdhury', 'avatar': 'male1.png' },
                     children: [{
-                        label: 'Super Kings',
+                        label: 'Media Portal',
                         className: 'department-coo'
                     },
                     {
-                        label: 'Team 2',
+                        label: 'Media Manager',
                         className: 'department-cfo'
                     },
                     {
-                        label: 'Team 3',
+                        label: 'Alchemist',
                         className: 'department-cfo'
                     }]
                 },

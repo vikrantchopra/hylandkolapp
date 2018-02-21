@@ -25,10 +25,13 @@ export default class AddEmployee extends Component {
       //agilecoach: '',
       manager: '',
       employees: [],
-      selectedEmployees: []
+      selectedEmployees: [],
+      filters: {}
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onFilter = this.onFilter.bind(this);
+    this.export = this.export.bind(this);
   }
 
   handleChange(e) {
@@ -99,21 +102,29 @@ export default class AddEmployee extends Component {
     }
     else {
       if (data instanceof Array)
-        return <ul style={{ textAlign: 'left', margin: 0 }}>{data.map((employee, i) => <li key={employee.id} style={{listStyle: 'none'}}>{employee.Email}</li>)}</ul>;
+        return <ul style={{ textAlign: 'left', margin: 0 }}>{data.map((employee, i) => <li key={employee.id} style={{ listStyle: 'none' }}>{employee.Email}</li>)}</ul>;
       else
         return <div style={{ textAlign: 'left' }}>Selected Employee: {data.email}</div>
     }
+  }
+
+  onFilter(e) {
+    this.setState({ filters: e.filters });
+  }
+
+  export() {
+    this.dt.exportCSV();
   }
 
   render() {
     let employees = this.state.employees;
     var employeeCount = this.state.employees ? this.state.employees.length : 0;
     //var header = <div className="ui-helper-clearfix" style={{ 'lineHeight': '1.87em' }}>Employee List <Button icon="fa-refresh" style={{ 'float': 'right' }} /></div>;
-    var header = <div style={{'textAlign':'left'}}>
-                        <i className="fa fa-search" style={{margin:'4px 4px 0 0'}}></i>
-                        <InputText type="search" onInput={(e) => this.setState({globalFilter: e.target.value})} placeholder="Global Search" size="50"/>
-						<span  style={{paddingLeft: '3em', fontSize: 'large' }}>Employee List </span><Button icon="fa-refresh" style={{ 'float': 'right' }} />
-                    </div>;
+    var header = <div style={{ 'textAlign': 'left' }}>
+      <i className="fa fa-search" style={{ margin: '4px 4px 0 0' }}></i>
+      <InputText type="search" onInput={(e) => this.setState({ globalFilter: e.target.value })} placeholder="Global Search" size="50" />
+      <span style={{ paddingLeft: '3em', fontSize: 'large' }}>Employee List </span><Button icon="fa-file-o" iconPos="left" label="CSV" onClick={this.export} style={{ 'float': 'right' }} />
+    </div>;
     var footer = "There are " + employeeCount + ' employees';
     return (
       <div class="ui-g">
@@ -186,7 +197,8 @@ export default class AddEmployee extends Component {
 
         <div class="ui-g-10">
           <DataTable value={employees} style={{ fontSize: '100%', textAlign: 'left' }} header={header} footer={this.displaySelection(this.state.selectedEmployees)} autoLayout="true"
-            selection={this.state.selectedEmployees} onSelectionChange={(e) => this.setState({ selectedEmployees: e.data })}>
+            selection={this.state.selectedEmployees} onSelectionChange={(e) => this.setState({ selectedEmployees: e.data })}
+            globalFilter={this.state.globalFilter} filters={this.state.filters} onFilter={this.onFilter} ref={(el) => { this.dt = el; }}>
             <Column selectionMode="multiple" style={{ width: '2em', backgroundColor: 'white' }} className="ui-chkbox-label" />
             <Column field="Name" header="Name" style={{ width: 120, textAlign: 'left' }} />
             <Column field="ShortName" header=" Short Name" style={{ width: 80, textAlign: 'left' }} sortable="true" />
