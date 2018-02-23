@@ -129,7 +129,6 @@ export default class AddEmployee extends Component {
     return (
       <div class="ui-g">
 
-
         <div class="ui-g-2">
           <form onSubmit={this.handleSubmit}>
             <Panel header="Add-Employee Form">
@@ -196,7 +195,7 @@ export default class AddEmployee extends Component {
         </div>
 
         <div class="ui-g-10">
-          <DataTable value={employees} style={{ fontSize: '100%', textAlign: 'left' }} header={header} footer={this.displaySelection(this.state.selectedEmployees)} autoLayout="true"
+          <DataTable value={employees} style={{ fontSize: '100%', textAlign: 'left' }} header={header} footer={this.displaySelection(this.state.selectedEmployees)} autoLayout={true}
             selection={this.state.selectedEmployees} onSelectionChange={(e) => this.setState({ selectedEmployees: e.data })}
             globalFilter={this.state.globalFilter} filters={this.state.filters} onFilter={this.onFilter} ref={(el) => { this.dt = el; }}>
             <Column selectionMode="multiple" style={{ width: '2em', backgroundColor: 'white' }} className="ui-chkbox-label" />

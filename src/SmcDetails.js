@@ -156,8 +156,7 @@ export default class SmcDetails extends Component {
 
         return (
             <div class="ui-organizationchart">
-                <h3>Basic</h3>
-                <p>Hierarchical data with zero configuration.</p>
+                
                 <OrganizationChart value={data1} nodeTemplate={this.nodeTemplate.bind(this)} style={{fontSize: "75%"}}></OrganizationChart>
             </div>
 

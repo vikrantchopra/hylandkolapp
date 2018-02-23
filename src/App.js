@@ -5,6 +5,7 @@ import './App.css';
 import UserInfo from './UserInfo';
 import AddEmployee from './AddEmployee';
 import SmcDetails from './SmcDetails';
+import AddRelease from './AddRelease';
 
 import { TabView, TabPanel } from 'primereact/components/tabview/TabView';
 
@@ -15,19 +16,22 @@ class App extends Component {
       <div className="App">
         <div className="content-section introduction App-header">
           <div className="feature-intro">
-            <h1>Welcome</h1>
-            <p>User Information displayed here.</p>
+            <h1>Welcome to Hyland Kolkata</h1>
+            
           </div>
         </div>
         {/*<UserInfo />*/}
 
 
         <TabView>
-          <TabPanel header="Add/Show Employees" leftIcon="fa-calendar">
+          <TabPanel header="Add/Show Employees">
             <AddEmployee />
           </TabPanel>
           <TabPanel header="Our Community">
             <SmcDetails />
+          </TabPanel>
+          <TabPanel header="Add/Show Releases">
+            <AddRelease />
           </TabPanel>
         </TabView>
 
